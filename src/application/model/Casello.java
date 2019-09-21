@@ -1,4 +1,4 @@
-package modello;
+package application.model;
 
 /**
  * Questa è la classe che definisce il Casello , tramite il nome e l'altezza in KM 

@@ -1,4 +1,4 @@
-package modello;
+package application.model;
 
 /**
  * La classe pedaggio serve al calcolo del pedaggio, e perciò  

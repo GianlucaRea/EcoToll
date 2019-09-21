@@ -1,15 +1,15 @@
-package controller;
+package application.controller;
 
 import java.util.List;
-import dao.DAOFactory;
-import dao.caselloDAO;
-import modello.Casello;
-import modello.Autostrada;
+import application.dao.DAOFactory;
+import application.dao.CaselloDAO;
+import application.model.Casello;
+import application.model.Autostrada;
 
 public class ControllerCasello {
 
 	private DAOFactory mysqlfactory;
-	private caselloDAO casellodao;
+	private CaselloDAO casellodao;
 	
 	public ControllerCasello() {
 		mysqlfactory = DAOFactory.getDAOFactory(DAOFactory.MYSQL);

@@ -1,4 +1,4 @@
-package dao;
+package application.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -7,14 +7,14 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import modello.Autostrada;
-import modello.Casello;
+import application.model.Autostrada;
+import application.model.Casello;
 
 /**
  * 
  * class Mysql di Casello che implementa CaselloDAO
  */
-public class MySqlCasello implements caselloDAO{
+public class MySqlCasello implements CaselloDAO{
 
 	private static final String selectAllCasello = "select nome, kilometro from ecotolldatabase.casello order by nome;"; // TURDACO''
 	private static final String deleteCasello = "delete from ecotolldatabase.casello where codice=?;";

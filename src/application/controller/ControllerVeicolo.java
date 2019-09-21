@@ -1,18 +1,18 @@
-package controller;
+package application.controller;
 
 
-import dao.veicoloDAO;
-import modello.Veicolo;
+import application.dao.VeicoloDAO;
+import application.model.Veicolo;
 
 import java.util.List;
 
-import dao.DAOFactory;
+import application.dao.DAOFactory;
 
 public class ControllerVeicolo {
 
 	
 	private DAOFactory mysqlfactory;
-	private veicoloDAO veicolodao;
+	private VeicoloDAO veicolodao;
  
 	
 	public ControllerVeicolo() {

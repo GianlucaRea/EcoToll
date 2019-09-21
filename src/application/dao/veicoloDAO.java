@@ -1,9 +1,9 @@
-package dao;
+package application.dao;
 
 
 import java.util.List;
 
-import modello.Veicolo;
+import application.model.Veicolo;
 
 /**
  * 
@@ -12,7 +12,7 @@ import modello.Veicolo;
  * insertVeicolo -> inserisce il veicolo nel veicolo;
  */
 
-public interface veicoloDAO {
+public interface VeicoloDAO {
 
 	public Veicolo getVeicolo(String t);
 	

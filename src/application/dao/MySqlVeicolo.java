@@ -1,4 +1,4 @@
-package dao;
+package application.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -7,15 +7,14 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import modello.Autostrada;
-import modello.Veicolo;
+import application.model.Veicolo;
 
 /**
  * 
  * class Mysql di Veicolo che implementa VeicoloDAO
  */
 
-public class MySqlVeicolo implements veicoloDAO{
+public class MySqlVeicolo implements VeicoloDAO{
 
 	private static final String VeicoloDates= "select * from veicolo where targa=?;";
 	private static final String addVeicolo ="insert into ecotolldatabase.veicolo value (?,?,?,?,?,?,?,?)";

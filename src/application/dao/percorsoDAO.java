@@ -1,6 +1,6 @@
-package dao;
+package application.dao;
 
-import modello.Percorso;
+import application.model.Percorso;
 
 /**
  * 
@@ -8,7 +8,7 @@ import modello.Percorso;
  * getVeicolo -> restituisce il percorso nel database;
  */
 
-public interface percorsoDAO {
+public interface PercorsoDAO {
 
 	public Percorso getPercorso(String p);
 }

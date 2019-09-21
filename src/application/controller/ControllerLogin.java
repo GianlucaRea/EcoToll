@@ -1,12 +1,12 @@
-package controller;
+package application.controller;
 
-import dao.loginDAO;
-import dao.DAOFactory;
+import application.dao.LoginDAO;
+import application.dao.DAOFactory;
  
 
 public class ControllerLogin {
 	private DAOFactory mysqlfactory;
-	private loginDAO loginDao;
+	private LoginDAO loginDao;
 	
 	public ControllerLogin() {
 		mysqlfactory = DAOFactory.getDAOFactory(DAOFactory.MYSQL);

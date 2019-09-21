@@ -1,4 +1,4 @@
-package dao;
+package application.dao;
  
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -33,23 +33,23 @@ public class MySQLDAOFactory extends DAOFactory {
         return conn;
     }
     
-	   public autostradaDAO getAutostradaDAO() {
+	   public AutostradaDAO getAutostradaDAO() {
 		return new MySqlAutostrada();
 	}
 	
-	   public caselloDAO getCaselloDAO(){
+	   public CaselloDAO getCaselloDAO(){
 		return new MySqlCasello();
 	}
 	   
-	   public percorsoDAO getPercorsoDAO() {
+	   public PercorsoDAO getPercorsoDAO() {
 		return new MySqlPercorso();
 	}
 	   
-	   public veicoloDAO getVeicoloDAO() {
+	   public VeicoloDAO getVeicoloDAO() {
 		return new MySqlVeicolo();
 	}
 	   
-	   public loginDAO getLoginDAO(){
+	   public LoginDAO getLoginDAO(){
 		return new MySqlLogin();
 	}
 	

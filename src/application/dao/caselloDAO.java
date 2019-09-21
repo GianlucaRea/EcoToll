@@ -1,9 +1,9 @@
-package dao;
+package application.dao;
 
 import java.util.*;
 
-import modello.Autostrada;
-import modello.Casello;
+import application.model.Autostrada;
+import application.model.Casello;
 
 
 /**
@@ -13,7 +13,7 @@ import modello.Casello;
  * addCasello -> aggiungi un casello nel database;
  */
 
-public interface caselloDAO {
+public interface CaselloDAO {
 
     public List<Casello> getListOfCasello();
 	

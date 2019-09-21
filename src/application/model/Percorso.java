@@ -1,4 +1,4 @@
-package modello;
+package application.model;
 /**
  * Classe che rappresenta un percorso di un guidatore specificato da caselli e dall'autostrada relativa ai caselli stessi
  * @author gianlucarea

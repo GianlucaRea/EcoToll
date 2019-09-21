@@ -1,4 +1,4 @@
-package dao;
+package application.dao;
 
 public abstract class DAOFactory {
 	 
@@ -8,11 +8,11 @@ public abstract class DAOFactory {
    public static final int ORACLE = 1;
 
    /** Metodi statici per classesDAO*/
-   public abstract autostradaDAO getAutostradaDAO();
-   public abstract caselloDAO getCaselloDAO();
-   public abstract percorsoDAO getPercorsoDAO();
-   public abstract veicoloDAO getVeicoloDAO();
-   public abstract loginDAO getLoginDAO();
+   public abstract AutostradaDAO getAutostradaDAO();
+   public abstract CaselloDAO getCaselloDAO();
+   public abstract PercorsoDAO getPercorsoDAO();
+   public abstract VeicoloDAO getVeicoloDAO();
+   public abstract LoginDAO getLoginDAO();
    /**
     * Metodo Factory
     * 

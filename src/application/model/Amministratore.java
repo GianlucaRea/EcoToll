@@ -1,4 +1,4 @@
-package modello;
+package application.model;
 
 /**
  * Classe Amministratore: entità che amministra e gestisce le autostrade e tutte le componenti relative ad esse.

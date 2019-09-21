@@ -1,6 +1,6 @@
-package dao;
+package application.dao;
 
-import modello.Amministratore;
+import application.model.Amministratore;
 
 /**
  * INTERFACCIA DAO login
@@ -8,7 +8,7 @@ import modello.Amministratore;
  *
  */
 
-public interface loginDAO {
+public interface LoginDAO {
 
 	public Amministratore getAmministratore(String username, String password);
 

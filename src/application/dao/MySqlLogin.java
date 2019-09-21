@@ -1,18 +1,18 @@
-package dao;
+package application.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import modello.Amministratore;
+import application.model.Amministratore;
 
 /**
  * 
  * class Mysql di login che implementa loginDAO
  */
 
-public class MySqlLogin implements loginDAO{
+public class MySqlLogin implements LoginDAO{
 	
 	private static final String Login = "select username, password from amministratore where username = ? and password = ?";
 	

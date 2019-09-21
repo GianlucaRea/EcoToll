@@ -1,13 +1,13 @@
-package controller;
+package application.controller;
 
-import dao.percorsoDAO;
-import dao.DAOFactory;
-import modello.Percorso;
+import application.dao.PercorsoDAO;
+import application.dao.DAOFactory;
+import application.model.Percorso;
 
 public class ControllerPercorso {
 
 	private DAOFactory mysqlfactory;
-	private percorsoDAO percorsodao;
+	private PercorsoDAO percorsodao;
 	
 	public ControllerPercorso() {
 		mysqlfactory = DAOFactory.getDAOFactory(DAOFactory.MYSQL);

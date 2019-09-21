@@ -1,4 +1,4 @@
-package dao;
+package application.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -7,13 +7,13 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import modello.Autostrada;
+import application.model.Autostrada;
 
 /**
  * 
  * class Mysql di autostrada che implementa AutostradaDAO
  */
-public class MySqlAutostrada implements autostradaDAO{
+public class MySqlAutostrada implements AutostradaDAO{
 
 	private static final String selectAllAutostrada = "select nome from ecotolldatabase.autostrada order by nome;";
 	private static final String deleteAutostrada = "delete from ecotolldatabase.autostrada where nome=?;";

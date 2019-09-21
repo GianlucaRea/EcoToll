@@ -1,20 +1,20 @@
-package dao;
+package application.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import modello.Percorso;
-import modello.Autostrada;
-import modello.Casello;
+import application.model.Percorso;
+import application.model.Autostrada;
+import application.model.Casello;
 
 /**
  * 
  * class Mysql di Percorso che implementa percorsoDAO
  */
 
-public class MySqlPercorso implements percorsoDAO{
+public class MySqlPercorso implements PercorsoDAO{
 
 	private static final String PercorsoDates= "select * from percorso where codicePercorso=?;";
 	

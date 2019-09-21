@@ -1,4 +1,4 @@
-package modello;
+package application.model;
 /**
  * Interfaccia che dichiara metodo getClassificazione della Classe Veicolo
  * @author gianlucarea
