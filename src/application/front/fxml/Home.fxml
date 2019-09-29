@@ -24,7 +24,7 @@
                   <TextField layoutX="24.0" layoutY="123.0" prefHeight="25.0" prefWidth="229.0" promptText="Username" />
                   <TextField layoutX="25.0" layoutY="175.0" prefHeight="25.0" prefWidth="229.0" promptText="Password" />
                   <Button layoutX="83.0" layoutY="230.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="102.0" text="Sign In" />
-                  <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="59.0" layoutY="322.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="65.0" layoutY="350.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../image/ecotoll.png" />
                      </image>
@@ -38,18 +38,11 @@
                         <Font name="System Bold Italic" size="24.0" />
                      </font>
                   </Label>
-                  <Label layoutX="113.0" layoutY="267.0" prefHeight="20.0" prefWidth="102.0" text="Classe Veicolo">
+                  <Label layoutX="208.0" layoutY="272.0" prefHeight="20.0" prefWidth="102.0" text="        Targa">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
                   </Label>
-                  <ChoiceBox layoutX="89.0" layoutY="287.0" prefWidth="150.0" />
-                  <Label layoutX="320.0" layoutY="267.0" prefHeight="17.0" prefWidth="82.0" text="Autostrada">
-                     <font>
-                        <Font name="System Bold" size="14.0" />
-                     </font>
-                  </Label>
-                  <ChoiceBox layoutX="278.0" layoutY="287.0" prefWidth="150.0" />
                   <ChoiceBox layoutX="89.0" layoutY="358.0" prefWidth="150.0" />
                   <ChoiceBox layoutX="278.0" layoutY="358.0" prefWidth="150.0" />
                   <Label layoutX="244.0" layoutY="459.0" />
@@ -58,7 +51,7 @@
                         <Font name="System Bold" size="14.0" />
                      </font>
                   </Label>
-                  <Label layoutX="109.0" layoutY="338.0" prefHeight="20.0" prefWidth="110.0" text="Casello Entrata">
+                  <Label layoutX="115.0" layoutY="338.0" prefHeight="20.0" prefWidth="110.0" text="Casello Entrata">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
@@ -75,6 +68,7 @@
                         <Image url="@../../../image/MotorWay.png" />
                      </image>
                   </ImageView>
+                  <TextField layoutX="183.0" layoutY="292.0" promptText="ES.   BF146ZM" />
                </children>
             </AnchorPane>
         </items>
