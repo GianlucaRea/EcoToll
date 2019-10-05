@@ -24,9 +24,9 @@
                   <TextField layoutX="24.0" layoutY="123.0" prefHeight="25.0" prefWidth="229.0" promptText="Username" />
                   <TextField layoutX="25.0" layoutY="175.0" prefHeight="25.0" prefWidth="229.0" promptText="Password" />
                   <Button layoutX="83.0" layoutY="230.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="102.0" text="Sign In" />
-                  <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="65.0" layoutY="350.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="59.0" layoutY="319.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../image/ecotoll.png" />
+                        <Image url="@../../../image/icona.png" />
                      </image>
                   </ImageView>
                </children>
