@@ -1,10 +1,12 @@
 package application.front.controller;
 
+import application.controller.ControllerCasello;
 import application.controller.ControllerLogin;
 import application.controller.ControllerVeicolo;
 import application.model.Amministratore;
 import application.model.Casello;
 import application.model.Veicolo;
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -27,10 +29,10 @@ public class HomeController {
     private PasswordField passwordfield;
 
     @FXML
-    private ChoiceBox<?> ShowEntryTollbooth;
+    private ChoiceBox<Casello> ShowEntryTollbooth = new ChoiceBox<Casello>(FXCollections.observableArrayList(ControllerCasello.getAllCas()));
 
     @FXML
-    private ChoiceBox<?> showExitToolbooth;
+    private ChoiceBox<Casello> showExitToolbooth = new ChoiceBox<Casello>(FXCollections.observableArrayList(ControllerCasello.getAllCas()));;
 
     @FXML
     private Button calculusButton;
@@ -42,9 +44,12 @@ public class HomeController {
     private TextField licensePlate;
     
     
-    private Veicolo veicoloPedaggio;
+    @SuppressWarnings("unused")
+	private Veicolo veicoloPedaggio;
    
-   
+    private Casello caselloEntrata;
+    
+    private Casello caselloUscita;
     // ADMIN LOGIN PART
    
     
@@ -67,17 +72,21 @@ public class HomeController {
     @FXML
     void selectEntryTollbooth(MouseEvent event) {
     	
-    	
+    	caselloEntrata = ShowEntryTollbooth.getValue();
+    	 
     }
 
     @FXML
     void selectExitToolbooth(MouseEvent event) {
-
+    	
+    	caselloUscita = showExitToolbooth.getValue();
     }
 
     @FXML
     void doCalculus(MouseEvent event) {
 
+    		
+    	
     }
 
 

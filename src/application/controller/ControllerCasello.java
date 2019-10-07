@@ -9,7 +9,7 @@ import application.model.Autostrada;
 public class ControllerCasello {
 
 	private DAOFactory mysqlfactory;
-	private CaselloDAO casellodao;
+	private static CaselloDAO casellodao;
 	
 	public ControllerCasello() {
 		mysqlfactory = DAOFactory.getDAOFactory(DAOFactory.MYSQL);
@@ -25,7 +25,7 @@ public class ControllerCasello {
 	 * Metodo che restituisce una lista di Caselli nel Database
 	 * @return Lista di Caselli nel Database
 	 */
-	public List<Casello> getAllCas() {
+	public static List<Casello> getAllCas() {
 		return casellodao.getListOfCasello();
 	}
 
