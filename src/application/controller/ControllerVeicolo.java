@@ -12,7 +12,7 @@ public class ControllerVeicolo {
 
 	
 	private DAOFactory mysqlfactory;
-	private VeicoloDAO veicolodao;
+	private static VeicoloDAO veicolodao;
  
 	
 	public ControllerVeicolo() {
@@ -25,8 +25,8 @@ public class ControllerVeicolo {
 	 * Metodo che prende un veicolo in base alla targa dal Database
 	 * @param t targa del veicolo
 	 */
-	public void getVeicoloGlobal(String t) {
-		veicolodao.getVeicolo(t);
+	public static Veicolo getVeicoloGlobal(String t) {
+		return veicolodao.getVeicolo(t);
 	}
 	
 	/**

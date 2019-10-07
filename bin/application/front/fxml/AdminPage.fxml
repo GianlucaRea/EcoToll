@@ -19,7 +19,7 @@
                </font>
             </Text>
             <Button layoutX="158.0" layoutY="209.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="83.0" text="Inserisci" />
-            <TextField layoutX="33.0" layoutY="69.0" prefHeight="25.0" prefWidth="92.0" />
+            <TextField fx:id="newmodelloinsert" layoutX="33.0" layoutY="69.0" prefHeight="25.0" prefWidth="92.0" />
             <Text layoutX="52.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Modello">
                <font>
                   <Font name="System Bold" size="14.0" />
@@ -36,7 +36,7 @@
                   <Font name="System Bold" size="14.0" />
                </font>
             </Text>
-            <TextField layoutX="279.0" layoutY="69.0" prefHeight="25.0" prefWidth="92.0" />
+            <TextField fx:id="newMarcaInsert" layoutX="279.0" layoutY="69.0" prefHeight="25.0" prefWidth="92.0" />
             <TextField layoutX="33.0" layoutY="120.0" prefHeight="25.0" prefWidth="92.0" />
             <Text layoutX="64.0" layoutY="115.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Peso">
                <font>
@@ -67,7 +67,7 @@
                   <Font name="System Bold" size="14.0" />
                </font>
             </Text>
-            <TextField layoutX="154.0" layoutY="69.0" prefHeight="25.0" prefWidth="92.0" />
+            <TextField fx:id="newtargainsert" layoutX="154.0" layoutY="69.0" prefHeight="25.0" prefWidth="92.0" />
          </children>
       </Pane>
       <Pane layoutX="400.0" layoutY="70.0" prefHeight="265.0" prefWidth="400.0" style="-fx-background-color: #97ea8e;">
@@ -77,14 +77,14 @@
                   <Font name="System Bold Italic" size="24.0" />
                </font>
             </Text>
-            <ChoiceBox layoutX="125.0" layoutY="73.0" prefWidth="150.0" />
+            <ChoiceBox fx:id="selectMotorway" layoutX="125.0" layoutY="73.0" prefWidth="150.0" />
             <Text layoutX="130.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Seleziona Autostrada">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
             </Text>
-            <TextField alignment="CENTER" layoutX="125.0" layoutY="108.0" promptText="Tariffa" />
-            <ListView layoutX="126.0" layoutY="155.0" prefHeight="53.0" prefWidth="149.0" />
+            <TextField fx:id="showTariffa" alignment="CENTER" layoutX="125.0" layoutY="108.0" promptText="Tariffa" />
+            <ListView fx:id="showCaselloList" layoutX="126.0" layoutY="155.0" prefHeight="53.0" prefWidth="149.0" />
             <Text layoutX="178.0" layoutY="151.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Caselli">
                <font>
                   <Font name="System Bold" size="14.0" />
@@ -100,9 +100,9 @@
                   <Font name="System Bold Italic" size="24.0" />
                </font>
             </Text>
-            <ChoiceBox layoutX="125.0" layoutY="71.0" prefWidth="150.0" />
-            <TextField alignment="CENTER" layoutX="126.0" layoutY="120.0" promptText="Kilometro" />
-            <Button layoutX="151.0" layoutY="184.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="99.0" text="Impostazioni" />
+            <ChoiceBox fx:id="selectCasello" layoutX="125.0" layoutY="71.0" prefWidth="150.0" />
+            <TextField fx:id="showKilometro" alignment="CENTER" layoutX="126.0" layoutY="120.0" promptText="Kilometro" />
+            <Button fx:id="goCasellosetting" layoutX="151.0" layoutY="184.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="99.0" text="Impostazioni" />
             <Text layoutX="143.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Seleziona Casello">
                <font>
                   <Font name="System Bold" size="14.0" />
