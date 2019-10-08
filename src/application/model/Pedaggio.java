@@ -22,7 +22,7 @@ package application.model;
 				double risultato = 0;
 				
 				for(Percorso p : percorsos) {
-					risultato += p.getDistance() * p.getAutostrada().getTariffa(v.getClassificazione());
+					risultato += p.getDistance() * p.getAutostrada().getTariffa(v.getClassificazione());  /* PROBLEMA */
 				}
 				risultato =risultato + risultato * iva / 100;
 				risultato = arrotondamento(risultato);
