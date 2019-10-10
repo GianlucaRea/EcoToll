@@ -6,28 +6,39 @@ package application.model;
  */
 public class Percorso {
 	
-		// private String codicePercorso;
+		private String codicePercorso;
 		private Casello casello1;
 		private Casello casello2;
-		// private Autostrada autostrada;
+		private Autostrada autostrada;
 		
 		/**
-		 * Metodo che costruisce un Percorso 
+		 * Metodo che costruisce un Percorso tramite codice , casello di entrata e uscita e veicolo
 		 * @param codicePercorso Il codice del percorso
 		 * @param casello1 Casello di Entrata in Autostrada
 		 * @param casello2 Casello di Uscita dall'Autostrada
-		 * @param autostrada Autostrada 
+		 * @param veicolo Veicolo che percorre il percordo
 		 */
-		public Percorso( Casello casello1, Casello casello2, Veicolo veicolo) {			
-			 /*if(!(autostrada.searchCasello(casello1) && autostrada.searchCasello(casello2))) {
-				throw new IllegalArgumentException();
-			} */
-			
-			// this.codicePercorso = codicePercorso;
+		
+		public Percorso( String codicePercorso , Casello casello1, Casello casello2, Veicolo veicolo) {			
+			 
+			this.codicePercorso = codicePercorso;
 			this.casello1 = casello1;
 			this.casello2 = casello2;
-			// this.autostrada = autostrada;
+		 
 		}
+		
+		
+		/**
+		 *  Metodo che costruisce un Percorso tramite casello di entrata,casello di uscita , e veicolo che utilizza il percorso
+		 * @param casello1 Casello di Entrata in Autostrada
+		 * @param casello2 Casello di Uscita dall'Autostrada
+		 *  
+		 */ 
+		
+		 public Percorso( Casello casello1 , Casello casello2 ) {
+			 this.casello1 = casello1;
+			 this.casello2 = casello2;
+		 }
 		
 		/**
 		 * Metodo costruisce un Percorso vuoto
@@ -47,12 +58,11 @@ public class Percorso {
 		 * Metodo che restituisce il codice del percorso
 		 * @return codice percorso
 		 */
-	/*	
+	 
 		public String getCodicePercorso() {
 			return codicePercorso;
 		}
-		
-		*/
+		 
 		
 		/**
 		 * Metodo che cambia il codice del percorso
@@ -60,12 +70,12 @@ public class Percorso {
 		 * ATTENZIONE: questo metodo deve essere usata solo per DAO e affini
 		 */
 		
-		/*
+		
 		public void setCodicePercorso(String newCod) {
 			this.codicePercorso = newCod;
 		}
 		
-		*/
+		
 		
 		/**
 		 * Metodo che restituisce il Casello di entrata in Autostrada
@@ -99,21 +109,13 @@ public class Percorso {
 			this.casello2 = casello2;
 		}
 		
-		/**
-		 * Metodo che restituisce L'autostrada su cui è effettuato il Percorso
-		 * @return Autostrada su cui è effettuato il Percorso
-		 */
-	//	public Autostrada getAutostrada() {
-		//	return autostrada;
-	//	}
-		
-		/**
-		 * Metodo che cambia L'autostrada su cui è effettuato il Percorso
-		 * @return void
-		 * ATTENZIONE da usare solo in DAO e affini
-		 */
-	//	public void setAutostrada(Autostrada a) {
-		//	this.autostrada = a;
-	//	} 
-		
+		public Autostrada getAutostrada() {	
+			  return autostrada;
+		}
+
+		public Autostrada getAutostrada(Casello casello1 , Casello casello2) {
+		if( autostrada.searchCasello(casello1) && autostrada.searchCasello(casello2)) {
+				 return autostrada;
+			} else return null;	
+		}
 }

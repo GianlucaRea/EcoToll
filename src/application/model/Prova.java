@@ -1,4 +1,4 @@
-/*package modello;
+ package application.model;
 
 public class Prova {
 
@@ -26,8 +26,8 @@ public class Prova {
 		Autostrada autostrada2 = new Autostrada("A55",tariffe2,c3,c4,c6);
 		
 		//Genero i miei percorsi sulle relative autostrade.
-		Percorso p1 = new Percorso(c1,c2, autostrada1);
-		Percorso p2 = new Percorso(c3,c4, autostrada2);
+		Percorso p1 = new Percorso(c1,c2);
+		Percorso p2 = new Percorso(c3,c4);
 		
 		//Stampo il pedaggio da pagare su tali percorsi utilizzando macchina come veicolo
 		System.out.print(Pedaggio.calcolaPedaggio(macchina, p1,p2));
@@ -35,5 +35,5 @@ public class Prova {
 	}
 
 }
-*/
+ 
 

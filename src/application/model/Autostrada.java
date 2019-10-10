@@ -14,7 +14,7 @@ import java.util.*;
 
 		private String nome;
 		private double[] tariffa = new double[5]; 
-		private HashSet<Casello> listacaselli = new HashSet<Casello>();
+		private static HashSet<Casello> listacaselli = new HashSet<Casello>();
 		
 		/**
 		 * Metodo che costruisce un Autostrada.
@@ -26,7 +26,7 @@ import java.util.*;
 			this.tariffa = tariffa;
 			this.nome = nome;
 			for(Casello c : listacaselli) {
-				this.listacaselli.add(c);
+				Autostrada.listacaselli.add(c);
 			}
 		}
 		
@@ -60,7 +60,7 @@ import java.util.*;
 		 * @param nome dell'Autostrada
 		 * @return caselli che appartendono all'autostrada.
 		 */
-		public Casello getCasello(String nome) {
+		public static Casello getCasello(String nome) {
 			
 		
 			for(Casello c : listacaselli) {
@@ -112,6 +112,8 @@ import java.util.*;
 		public void setTariffa(double tariffa, int ClassificazioneVeicolo) {
 			this.tariffa[ClassificazioneVeicolo - 1] = tariffa;
 		}
+		
+
 		
 		/**
 		 * Metodo che restituisce il nome dell'Autostrada
