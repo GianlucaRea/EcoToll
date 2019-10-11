@@ -31,7 +31,7 @@ public class MySqlPercorso implements PercorsoDAO{
 			pst.setString(1, p);
 			rst=pst.executeQuery();
 			while (rst.next()){
-				 percorso.setCodicePercorso(rst.getString("codicePercorso"));
+				 percorso.setCodicePercorso(rst.getInt("codicePercorso"));
 				 Autostrada temp = new Autostrada();
 				 temp.setName(rst.getString("nomeAutostrada"));
 				 //percorso.setAutostrada(temp);

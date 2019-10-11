@@ -6,39 +6,43 @@ package application.model;
  */
 public class Percorso {
 	
-		private String codicePercorso;
+		private static int count = 0;
+		private int codicePercorso;
 		private Casello casello1;
 		private Casello casello2;
 		private Autostrada autostrada;
 		
+	
 		/**
-		 * Metodo che costruisce un Percorso tramite codice , casello di entrata e uscita e veicolo
-		 * @param codicePercorso Il codice del percorso
+		 * Metodo che costruisce un Percorso tramite casello di entrata e uscita e veicolo
 		 * @param casello1 Casello di Entrata in Autostrada
 		 * @param casello2 Casello di Uscita dall'Autostrada
-		 * @param veicolo Veicolo che percorre il percordo
+		 * @param Autostrada Autostrada sul quale viene effettuato il percorso
+		 * codice percorso è trattato come un autoIncrement.
 		 */
 		
-		public Percorso( String codicePercorso , Casello casello1, Casello casello2, Veicolo veicolo) {			
-			 
-			this.codicePercorso = codicePercorso;
+		public Percorso(Casello casello1, Casello casello2, Autostrada autostrada) {
+			if (!(autostrada.searchCasello(casello1) && (autostrada.searchCasello(casello2)))) 
+				{throw new IllegalArgumentException("i caselli di questo percorso non appartengono alla stessa autostrada!");} 
+			else
 			this.casello1 = casello1;
 			this.casello2 = casello2;
-		 
+			this.autostrada = autostrada;
+		    this.codicePercorso = ++count;
 		}
 		
-		
+		/*
 		/**
-		 *  Metodo che costruisce un Percorso tramite casello di entrata,casello di uscita , e veicolo che utilizza il percorso
+		 *  Metodo che costruisce un Percorso tramite casello di entrata,casello di uscita
 		 * @param casello1 Casello di Entrata in Autostrada
 		 * @param casello2 Casello di Uscita dall'Autostrada
 		 *  
 		 */ 
-		
+		 /*
 		 public Percorso( Casello casello1 , Casello casello2 ) {
 			 this.casello1 = casello1;
 			 this.casello2 = casello2;
-		 }
+		 }*/
 		
 		/**
 		 * Metodo costruisce un Percorso vuoto
@@ -59,7 +63,7 @@ public class Percorso {
 		 * @return codice percorso
 		 */
 	 
-		public String getCodicePercorso() {
+		public int getCodicePercorso() {
 			return codicePercorso;
 		}
 		 
@@ -71,7 +75,7 @@ public class Percorso {
 		 */
 		
 		
-		public void setCodicePercorso(String newCod) {
+		public void setCodicePercorso(int newCod) {
 			this.codicePercorso = newCod;
 		}
 		
@@ -109,13 +113,11 @@ public class Percorso {
 			this.casello2 = casello2;
 		}
 		
+		/**
+		 * Medoto che restituisce un Autostrada
+		 * @return autostrada Ritorna Un Autostrada
+		 */
 		public Autostrada getAutostrada() {	
 			  return autostrada;
-		}
-
-		public Autostrada getAutostrada(Casello casello1 , Casello casello2) {
-		if( autostrada.searchCasello(casello1) && autostrada.searchCasello(casello2)) {
-				 return autostrada;
-			} else return null;	
 		}
 }

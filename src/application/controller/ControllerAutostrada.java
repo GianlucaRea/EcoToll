@@ -9,7 +9,7 @@ import application.model.Autostrada;
 public class ControllerAutostrada {
 
 	private DAOFactory mysqlfactory;
-	private AutostradaDAO autostradaDao;
+	private static AutostradaDAO autostradaDao;
 	
 	public ControllerAutostrada() {
 		mysqlfactory = DAOFactory.getDAOFactory(DAOFactory.MYSQL);
@@ -26,7 +26,7 @@ public class ControllerAutostrada {
 	 * @return Lista di Autostrade nel Database
 	 */
 	
-	public List<Autostrada> getAllAutostade() {
+	public static List<Autostrada> getAllAutostade() {
     	return autostradaDao.getListOfAutostrada();
 	}
 	

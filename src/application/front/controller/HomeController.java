@@ -1,10 +1,11 @@
 package application.front.controller;
 
 import application.controller.ControllerCasello;
-import application.controller.ControllerLogin;
 import application.controller.ControllerVeicolo;
-import application.model.Amministratore;
+import application.controller.ControllerAutostrada;
+import application.model.Autostrada;
 import application.model.Casello;
+import application.model.Percorso;
 import application.model.Veicolo;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
@@ -29,11 +30,16 @@ public class HomeController {
     private PasswordField passwordfield;
 
     @FXML
-    private ChoiceBox<Casello> ShowEntryTollbooth = new ChoiceBox<Casello>(FXCollections.observableArrayList(ControllerCasello.getAllCas()));
+    private ChoiceBox<Casello> showEntryTollbooth = new ChoiceBox<Casello>(FXCollections.observableArrayList(ControllerCasello.getAllCas()));
 
     @FXML
     private ChoiceBox<Casello> showExitToolbooth = new ChoiceBox<Casello>(FXCollections.observableArrayList(ControllerCasello.getAllCas()));;
 
+
+    @FXML
+    private ChoiceBox<Autostrada> showMotorwayPay = new ChoiceBox<Autostrada>(FXCollections.observableArrayList(ControllerAutostrada.getAllAutostade()));
+    
+    
     @FXML
     private Button calculusButton;
 
@@ -44,12 +50,17 @@ public class HomeController {
     private TextField licensePlate;
     
     
-    @SuppressWarnings("unused")
+   
 	private Veicolo veicoloPedaggio;
    
     private Casello caselloEntrata;
     
     private Casello caselloUscita;
+    
+    private Autostrada autostrada1;
+   
+    private double result1;
+    
     // ADMIN LOGIN PART
    
     
@@ -68,11 +79,18 @@ public class HomeController {
     	 veicoloPedaggio = ControllerVeicolo.getVeicoloGlobal(licensePlate.getText());
     
     }
+    
+    @FXML
+    void selectAutostradaPedaggio(MouseEvent event) {
+    	 
+    	autostrada1 = showMotorwayPay.getValue();
+    
+    }
 
     @FXML
     void selectEntryTollbooth(MouseEvent event) {
     	
-    	caselloEntrata = ShowEntryTollbooth.getValue();
+    	caselloEntrata = showEntryTollbooth.getValue();
     	 
     }
 
@@ -80,19 +98,25 @@ public class HomeController {
     void selectExitToolbooth(MouseEvent event) {
     	
     	caselloUscita = showExitToolbooth.getValue();
+    
     }
+    
+    
+    private Percorso percorso1 = new Percorso(caselloEntrata,caselloUscita,autostrada1);
 
     @FXML
     void doCalculus(MouseEvent event) {
-
-    		
     	
+    	result1 = application.model.Pedaggio.calcolaPedaggio(veicoloPedaggio,percorso1);
+    
     }
 
 
     @FXML
-    void returnResult(ActionEvent event) {
+    void returnResult(ActionEvent doCalculus) {
     	
+    	System.out.print(result1);
+    
     }
 
 

@@ -14,17 +14,15 @@ package application.model;
 		 * Metodo per il calcolo del Pedaggio in cui è specificata l'iva in caso di cambio di essa per questo specifico calcolo
 		 * @param v Veicolo che Effettua il tragitto
 		 * @param iva Iva Da Pagare per il tragitto
-		 * @param percorsos Traggito che effettua il Veicolo
+		 * @param percorso Traggito che effettua il Veicolo
 		 * @return Il risultato del calcolo del pedaggio con iva
 		 */
 			//Metodo per eventuale futuro nel quale può essere specificata l'iva in caso di cambio per questo specifico calcolo
-			public static double calcolaPedaggio(Veicolo v, int iva, Percorso...percorsos ) {				
+			public static double calcolaPedaggio(Veicolo v, int iva, Percorso percorso ) {				
 				double risultato = 0;
 				
-				for(Percorso p : percorsos) {
-					risultato += p.getDistance() * p.getAutostrada(p.getCasello1() , p.getCasello2()).getTariffa(v.getClassificazione());  /* PROBLEMA */
-				}
-				risultato =risultato + risultato * iva / 100;
+				risultato += percorso.getDistance() * percorso.getAutostrada().getTariffa(v.getClassificazione());
+				risultato = risultato + risultato * iva / 100;
 				risultato = arrotondamento(risultato);
 				return risultato;
 			}
@@ -35,15 +33,12 @@ package application.model;
 			 * @param percorsos traggiot che effettua il veicolo
 			 * @return Il risultato del calcolo del pedaggio con iva attuale
 			 */
-			public static double calcolaPedaggio(Veicolo v, Percorso...percorsos) {
+			public static double calcolaPedaggio(Veicolo v, Percorso percorso) {
 				
 				double risultato = 0;
 				int iva = 22;
 				
-				for(Percorso p : percorsos) {
-					risultato += p.getDistance() * p.getAutostrada(p.getCasello1() , p.getCasello2()).getTariffa(v.getClassificazione());
-				}
-				
+				risultato += percorso.getDistance() * percorso.getAutostrada().getTariffa(v.getClassificazione());
 				risultato = risultato + risultato * iva / 100;
 				risultato = arrotondamento(risultato);
 				return risultato;

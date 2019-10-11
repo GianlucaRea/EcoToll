@@ -25,9 +25,9 @@
                         <Font name="System Bold Italic" size="24.0" />
                      </font>
                   </Text>
-                  <TextField layoutX="92.0" layoutY="77.0" promptText="Es L'Aquila Ovest" />
-                  <TextField layoutX="325.0" layoutY="77.0" promptText="Kilometro" />
-                  <ChoiceBox layoutX="562.0" layoutY="77.0" prefWidth="150.0" />
+                  <TextField fx:id="newToolboothNameInsert" layoutX="92.0" layoutY="77.0" onMouseClicked="#writeNewInsertName" promptText="Es L'Aquila Ovest" />
+                  <TextField fx:id="newKilometroInsert" layoutX="325.0" layoutY="77.0" onMouseClicked="#InsertnewKilometroInsert" promptText="Kilometro" />
+                  <ChoiceBox fx:id="selectMotorwayofInsert" layoutX="562.0" layoutY="77.0" onMouseClicked="#SelectMotorwayInsert" prefWidth="150.0" />
                   <Text layoutX="600.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Autostrada">
                      <font>
                         <Font name="System Bold" size="14.0" />
@@ -43,7 +43,7 @@
                         <Font name="System Bold" size="14.0" />
                      </font>
                   </Text>
-                  <Button layoutX="371.0" layoutY="122.0" mnemonicParsing="false" text="Inserisci" />
+                  <Button fx:id="InsertButtonToolbooth" layoutX="371.0" layoutY="122.0" mnemonicParsing="false" text="Inserisci" />
                </children>
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="211.0" prefWidth="647.0">

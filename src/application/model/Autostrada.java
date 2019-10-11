@@ -14,7 +14,7 @@ import java.util.*;
 
 		private String nome;
 		private double[] tariffa = new double[5]; 
-		private static HashSet<Casello> listacaselli = new HashSet<Casello>();
+		private HashSet<Casello> listaCaselli = new HashSet<Casello>();
 		
 		/**
 		 * Metodo che costruisce un Autostrada.
@@ -22,14 +22,26 @@ import java.util.*;
 		 * @param tariffa dell'Autostrada
 		 * @param caselli dell'Autostrada
 		 */
-		public Autostrada(String nome, double[] tariffa, Casello...caselli ) {
+		public Autostrada(String nome, double[] tariffa, HashSet<Casello> listaCaselli ) {
 			this.tariffa = tariffa;
 			this.nome = nome;
-			for(Casello c : listacaselli) {
-				Autostrada.listacaselli.add(c);
-			}
+			this.listaCaselli.addAll(listaCaselli);
 		}
 		
+		/**
+		 * Metodo che costruisce un Autostrada senza i caselli
+		 * @param nome dell'Autostrada
+		 * @param tariffa dell'Autostrada
+		 */
+		public Autostrada(String nome, double[] tariffa){
+			this.tariffa = tariffa;
+			this.nome = nome;
+			}
+		
+		/**
+		 * Metodo che costruisce un Autostrada solo col nome
+		 * @param nome dell'Autostrada
+		 */
 		public Autostrada(String nome) {
 			this.nome = nome;
 			
@@ -50,20 +62,16 @@ import java.util.*;
 		 * @param casello nuovo Casello dell'Autostrada
 		 */
 		public void addCasello(Casello casello) {
-			
-			listacaselli.add(casello);
-			return;
+			listaCaselli.add(casello);
 		}
 		
 		/**
-		 * Metodo che dato un nome dell'autostrada ne restituisce il Casello
-		 * @param nome dell'Autostrada
+		 * Metodo che data l'autostrada ne restituisce il Casello
+		 * @param Autostrada
 		 * @return caselli che appartendono all'autostrada.
 		 */
-		public static Casello getCasello(String nome) {
-			
-		
-			for(Casello c : listacaselli) {
+		public Casello getCasello(String nome) {
+			for(Casello c : listaCaselli) {
 				if(c.getNome().equals(nome.toLowerCase())) return c;
 			}
 			return null;
@@ -75,7 +83,7 @@ import java.util.*;
 		 * @return boolean
 		 */
 		public boolean searchCasello(Casello c) {
-			return listacaselli.contains(c);
+			return listaCaselli.contains(c);
 		}
 		
 		/**
@@ -84,7 +92,7 @@ import java.util.*;
 		 * @return boolean
 		 */
 		public boolean deleteCasello(Casello c) {
-			return listacaselli.remove(c);
+			return listaCaselli.remove(c);
 		}
 		
 		/**
@@ -101,7 +109,7 @@ import java.util.*;
 		 * @return la lista dei Caselli
 		 */
 		public HashSet<Casello> getListaCaselli(){
-			return listacaselli;
+			return listaCaselli;
 		}
 		
 		/**
