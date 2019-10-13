@@ -5,6 +5,7 @@ import application.controller.ControllerVeicolo;
 import application.controller.ControllerAutostrada;
 import application.model.Autostrada;
 import application.model.Casello;
+import application.model.Pedaggio;
 import application.model.Percorso;
 import application.model.Veicolo;
 import javafx.collections.FXCollections;
@@ -107,7 +108,7 @@ public class HomeController {
     @FXML
     void doCalculus(MouseEvent event) {
     	
-    	result1 = application.model.Pedaggio.calcolaPedaggio(veicoloPedaggio,percorso1);
+    	result1 = Pedaggio.calcolaPedaggio(veicoloPedaggio,percorso1);
     
     }
 
