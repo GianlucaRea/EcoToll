@@ -28,7 +28,7 @@ public class HomeController {
     private Button loginButton;
 
     @FXML
-    private PasswordField passwordfield;
+    private PasswordField passwordField;
 
     @FXML
     private ChoiceBox<Casello> showEntryTollbooth = new ChoiceBox<Casello>(FXCollections.observableArrayList(ControllerCasello.getAllCas()));

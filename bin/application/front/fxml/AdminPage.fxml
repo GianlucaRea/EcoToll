@@ -9,67 +9,8 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="801.0" style="-fx-background-color: #607ce0;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AdminPageController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="801.0" style="-fx-background-color: #607ce0;" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="AdminPageController">
    <children>
-      <Pane layoutY="335.0" prefHeight="265.0" prefWidth="400.0" style="-fx-background-color: #97ea8e;">
-         <children>
-            <Text layoutX="158.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Veicolo" wrappingWidth="83.49609375">
-               <font>
-                  <Font name="System Bold Italic" size="24.0" />
-               </font>
-            </Text>
-            <Button layoutX="158.0" layoutY="209.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="83.0" text="Inserisci" />
-            <TextField fx:id="newmodelloinsert" layoutX="33.0" layoutY="69.0" prefHeight="25.0" prefWidth="92.0" />
-            <Text layoutX="52.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Modello">
-               <font>
-                  <Font name="System Bold" size="14.0" />
-               </font>
-            </Text>
-            <TextField layoutX="233.0" layoutY="168.0" prefHeight="25.0" prefWidth="92.0" />
-            <Text layoutX="181.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Targa">
-               <font>
-                  <Font name="System Bold" size="14.0" />
-               </font>
-            </Text>
-            <Text layoutX="305.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Marca">
-               <font>
-                  <Font name="System Bold" size="14.0" />
-               </font>
-            </Text>
-            <TextField fx:id="newMarcaInsert" layoutX="279.0" layoutY="69.0" prefHeight="25.0" prefWidth="92.0" />
-            <TextField layoutX="33.0" layoutY="120.0" prefHeight="25.0" prefWidth="92.0" />
-            <Text layoutX="64.0" layoutY="115.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Peso">
-               <font>
-                  <Font name="System Bold" size="14.0" />
-               </font>
-            </Text>
-            <Text layoutX="182.0" layoutY="115.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Anno">
-               <font>
-                  <Font name="System Bold" size="14.0" />
-               </font>
-            </Text>
-            <Text layoutX="293.0" layoutY="114.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Num. Assi">
-               <font>
-                  <Font name="System Bold" size="14.0" />
-               </font>
-            </Text>
-            <TextField layoutX="154.0" layoutY="120.0" prefHeight="25.0" prefWidth="92.0" />
-            <TextField layoutX="280.0" layoutY="120.0" prefHeight="25.0" prefWidth="92.0" />
-            <TextField layoutX="79.0" layoutY="168.0" prefHeight="25.0" prefWidth="92.0" />
-            <Text layoutX="88.0" layoutY="164.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Classe Euro">
-               <font>
-                  <Font name="System Bold" size="14.0" />
-               </font>
-            </Text>
-            <Text layoutX="268.0" layoutY="164.0" strokeType="OUTSIDE" strokeWidth="0.0" />
-            <Text layoutX="256.0" layoutY="163.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Altezza">
-               <font>
-                  <Font name="System Bold" size="14.0" />
-               </font>
-            </Text>
-            <TextField fx:id="newtargainsert" layoutX="154.0" layoutY="69.0" prefHeight="25.0" prefWidth="92.0" />
-         </children>
-      </Pane>
       <Pane layoutX="400.0" layoutY="70.0" prefHeight="265.0" prefWidth="400.0" style="-fx-background-color: #97ea8e;">
          <children>
             <Text layoutX="136.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Autostrada">
@@ -110,21 +51,21 @@
             </Text>
          </children>
       </Pane>
-      <Pane layoutX="400.0" layoutY="335.0" prefHeight="265.0" prefWidth="400.0" style="-fx-background-color: #97ea8e;">
+      <Pane layoutX="-1.0" layoutY="335.0" prefHeight="265.0" prefWidth="801.0" style="-fx-background-color: #97ea8e;">
          <children>
-            <Text layoutX="138.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Normativa" wrappingWidth="125.84765625">
+            <Text layoutX="338.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Normativa" wrappingWidth="125.84765625">
                <font>
                   <Font name="System Bold Italic" size="24.0" />
                </font>
             </Text>
-            <Button layoutX="164.0" layoutY="63.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="73.0" text="Inserisci" />
-            <ChoiceBox layoutX="126.0" layoutY="127.0" prefWidth="150.0" />
-            <Text layoutX="126.0" layoutY="123.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Scegli Normativa" textAlignment="CENTER" wrappingWidth="150.0">
+            <Button layoutX="90.0" layoutY="186.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="73.0" text="Inserisci" />
+            <ChoiceBox layoutX="591.0" layoutY="142.0" prefWidth="150.0" />
+            <Text layoutX="591.0" layoutY="132.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Scegli Normativa" textAlignment="CENTER" wrappingWidth="150.0">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
             </Text>
-            <Button layoutX="172.0" layoutY="173.0" mnemonicParsing="false" text="Cambia" />
+            <Button layoutX="638.0" layoutY="186.0" mnemonicParsing="false" text="Cambia" />
          </children>
       </Pane>
       <Text layoutX="322.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Administrator">
