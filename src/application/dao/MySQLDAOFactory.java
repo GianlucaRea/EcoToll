@@ -13,7 +13,7 @@ public class MySQLDAOFactory extends DAOFactory {
     /** Lo username per le operazioni sul DB  */
     public static final String USER = "root";
     /** La password per le operazioni sul DB */
-    public static final String PASS = "Annaluna";
+    public static final String PASS = "root";
     
     /**
      * Metodo per creare una connessione sul DB MySQL
