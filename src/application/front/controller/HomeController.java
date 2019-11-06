@@ -20,8 +20,7 @@ import javafx.scene.input.MouseEvent;
 
 
 public class HomeController {
-
-    @FXML
+	@FXML
     private TextField usernamefield;
 
     @FXML
@@ -31,16 +30,11 @@ public class HomeController {
     private PasswordField passwordField;
 
     @FXML
-    private ChoiceBox<Casello> showEntryTollbooth = new ChoiceBox<Casello>(FXCollections.observableArrayList(ControllerCasello.getAllCas()));
+    private ChoiceBox<?> showEntryTollbooth;
 
     @FXML
-    private ChoiceBox<Casello> showExitToolbooth = new ChoiceBox<Casello>(FXCollections.observableArrayList(ControllerCasello.getAllCas()));;
+    private ChoiceBox<?> showExitToolbooth;
 
-
-    @FXML
-    private ChoiceBox<Autostrada> showMotorwayPay = new ChoiceBox<Autostrada>(FXCollections.observableArrayList(ControllerAutostrada.getAllAutostade()));
-    
-    
     @FXML
     private Button calculusButton;
 
@@ -49,75 +43,43 @@ public class HomeController {
 
     @FXML
     private TextField licensePlate;
-    
-    
-   
-	private Veicolo veicoloPedaggio;
-   
-    private Casello caselloEntrata;
-    
-    private Casello caselloUscita;
-    
-    private Autostrada autostrada1;
-   
-    private double result1;
-    
-    // ADMIN LOGIN PART
-   
-    
-    
+
     @FXML
-    void loginAdmin(MouseEvent event) {
-		
+    private ChoiceBox<?> showMotorwayPay;
+
+    @FXML
+    void doCalculus(MouseEvent event) {
+
     }
-    
-    
-    // PEDAGGIO PART
-   
+
     @FXML
     void enterLicensePlate(MouseEvent event) {
-         
-    	 veicoloPedaggio = ControllerVeicolo.getVeicoloGlobal(licensePlate.getText());
-    
+
     }
-    
+
+    @FXML
+    void loginAdmin(MouseEvent event) {
+
+    }
+
+    @FXML
+    void returnResult(ActionEvent event) {
+
+    }
+
     @FXML
     void selectAutostradaPedaggio(MouseEvent event) {
-    	 
-    	autostrada1 = showMotorwayPay.getValue();
-    
+
     }
 
     @FXML
     void selectEntryTollbooth(MouseEvent event) {
-    	
-    	caselloEntrata = showEntryTollbooth.getValue();
-    	 
+
     }
 
     @FXML
     void selectExitToolbooth(MouseEvent event) {
-    	
-    	caselloUscita = showExitToolbooth.getValue();
-    
-    }
-    
-    
-    private Percorso percorso1 = new Percorso(caselloEntrata,caselloUscita,autostrada1);
 
-    @FXML
-    void doCalculus(MouseEvent event) {
-    	
-    	result1 = Pedaggio.calcolaPedaggio(veicoloPedaggio,percorso1);
-    
-    }
-
-
-    @FXML
-    void returnResult(ActionEvent doCalculus) {
-    	
-    	System.out.print(result1);
-    
     }
 
 
