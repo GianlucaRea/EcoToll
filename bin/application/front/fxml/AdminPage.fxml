@@ -9,7 +9,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="801.0" style="-fx-background-color: #607ce0;" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="AdminPageController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="801.0" style="-fx-background-color: #607ce0;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.front.controller.AdminPageController">
    <children>
       <Pane layoutX="400.0" layoutY="70.0" prefHeight="265.0" prefWidth="400.0" style="-fx-background-color: #97ea8e;">
          <children>
@@ -31,7 +31,7 @@
                   <Font name="System Bold" size="14.0" />
                </font>
             </Text>
-            <Button layoutX="149.0" layoutY="226.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="99.0" text="Impostazioni" />
+            <Button fx:id="goAutostradasetting" layoutX="149.0" layoutY="226.0" mnemonicParsing="false" onMouseClicked="#gotoAutostradaSetting" prefHeight="25.0" prefWidth="99.0" text="Impostazioni" />
          </children>
       </Pane>
       <Pane layoutY="70.0" prefHeight="265.0" prefWidth="400.0" style="-fx-background-color: #97ea8e;">
@@ -43,7 +43,7 @@
             </Text>
             <ChoiceBox fx:id="selectCasello" layoutX="125.0" layoutY="71.0" prefWidth="150.0" />
             <TextField fx:id="showKilometro" alignment="CENTER" layoutX="126.0" layoutY="120.0" promptText="Kilometro" />
-            <Button fx:id="goCasellosetting" layoutX="151.0" layoutY="184.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="99.0" text="Impostazioni" />
+            <Button fx:id="goCasellosetting" layoutX="151.0" layoutY="184.0" mnemonicParsing="false" onMouseClicked="#gotoCaselloSetting" prefHeight="25.0" prefWidth="99.0" text="Impostazioni" />
             <Text layoutX="143.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Seleziona Casello">
                <font>
                   <Font name="System Bold" size="14.0" />
@@ -73,7 +73,7 @@
             <Font name="System Bold" size="24.0" />
          </font>
       </Text>
-      <Button layoutX="717.0" layoutY="12.0" mnemonicParsing="false" prefHeight="6.0" prefWidth="73.0" style="-fx-background-color: #97ea8e;" text="Logout">
+      <Button fx:id="logoutButton" layoutX="717.0" layoutY="12.0" mnemonicParsing="false" onMouseClicked="#dologout" prefHeight="6.0" prefWidth="73.0" style="-fx-background-color: #97ea8e;" text="Logout">
          <font>
             <Font size="16.0" />
          </font>
