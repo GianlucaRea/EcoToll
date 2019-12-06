@@ -1,14 +1,12 @@
 package application.front.controller;
 
-import application.controller.ControllerCasello;
-import application.controller.ControllerVeicolo;
+import java.net.URL;
+import java.util.ResourceBundle;
+
 import application.controller.ControllerAutostrada;
+import application.controller.ControllerCasello;
 import application.model.Autostrada;
 import application.model.Casello;
-import application.model.Pedaggio;
-import application.model.Percorso;
-import application.model.Veicolo;
-import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -17,39 +15,38 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 
-
-
-public class HomeController {
-	@FXML
-    private TextField usernamefield;
+public class HomeController implements javafx.fxml.Initializable{
 
     @FXML
-    private Button loginButton;
+    protected TextField usernamefield;
 
     @FXML
-    private PasswordField passwordField;
+    protected Button loginButton;
 
     @FXML
-    private ChoiceBox<?> showEntryTollbooth;
+    protected PasswordField passwordField;
 
     @FXML
-    private ChoiceBox<?> showExitToolbooth;
+    protected ChoiceBox<String> showEntryTollbooth;
 
     @FXML
-    private Button calculusButton;
+    protected ChoiceBox<String> showExitToolbooth;
 
     @FXML
-    private TextField result;
+    protected Button calculusButton;
 
     @FXML
-    private TextField licensePlate;
+    protected TextField result;
 
     @FXML
-    private ChoiceBox<?> showMotorwayPay;
+    protected TextField licensePlate;
+
+    @FXML
+    protected ChoiceBox<String> showMotorwayPay;
 
     @FXML
     void doCalculus(MouseEvent event) {
-
+    	System.out.println("Hello World!");
     }
 
     @FXML
@@ -59,6 +56,16 @@ public class HomeController {
 
     @FXML
     void loginAdmin(MouseEvent event) {
+
+    }
+
+    @FXML
+    void onBtnCalcola(ActionEvent event) {
+
+    }
+
+    @FXML
+    void onBtnLogin(ActionEvent event) {
 
     }
 
@@ -82,6 +89,13 @@ public class HomeController {
 
     }
 
-
-
+	@Override
+	public void initialize(URL arg0, ResourceBundle arg1) {
+		for (Autostrada autostrada : ControllerAutostrada.getAllAutostade()) {
+			showMotorwayPay.getItems().add(autostrada.getNome());
+		}
+		for(Casello casello : ControllerCasello.getAllCas()) {
+			showEntryTollbooth.getItems().add(casello.getNome());
+		}
+	}
 }
