@@ -1,7 +1,6 @@
 package application.front.controller;
 
-import java.net.URL;
-import java.util.ResourceBundle;
+
 
 import application.controller.ControllerAutostrada;
 import application.controller.ControllerCasello;
@@ -15,9 +14,10 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 
-public class HomeController implements javafx.fxml.Initializable{
+public class HomeController { 
 
-    @FXML
+
+  @FXML
     protected TextField usernamefield;
 
     @FXML
@@ -89,13 +89,4 @@ public class HomeController implements javafx.fxml.Initializable{
 
     }
 
-	@Override
-	public void initialize(URL arg0, ResourceBundle arg1) {
-		for (Autostrada autostrada : ControllerAutostrada.getAllAutostade()) {
-			showMotorwayPay.getItems().add(autostrada.getNome());
-		}
-		for(Casello casello : ControllerCasello.getAllCas()) {
-			showEntryTollbooth.getItems().add(casello.getNome());
-		}
-	}
 }
