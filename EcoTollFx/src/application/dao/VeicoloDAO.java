@@ -8,8 +8,8 @@ import application.model.Veicolo;
 /**
  * 
  * INTERFACCIA DAO Veicolo
- * getVeicolo -> restituisce il veicolo nel database data la targa;
- * insertVeicolo -> inserisce il veicolo nel veicolo;
+ * getVeicolo restituisce il veicolo nel database data la targa;
+ * insertVeicolo inserisce il veicolo nel veicolo;
  */
 
 public interface VeicoloDAO {

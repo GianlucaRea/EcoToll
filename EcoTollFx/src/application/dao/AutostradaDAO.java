@@ -5,12 +5,12 @@ import java.util.*;
 
 /**
  * INTERFACCIA DAO AUTOSTRADA
- * getListOfAutostrada -> restituisce la lista di tutte le autostrade nel database;
- * deleteAutostrada -> elimina un'autostrada dal database;
- * addAutostrada -> aggiunge un autostrada nel database, se gi‡ presenti inserisce inoltre automaticamente tutte le tariffe associata a questa autostrada;
- * addTariffaManually -> aggiunge una determinata tariffa nel database associandola ad una autostrada;
- * deleteTariffa -> rimuove una tariffa di una classe veicolo associata ad un'autostrada nel database;
- * updateNome -> modifica il nome dell'autostrada.
+ * getListOfAutostrada restituisce la lista di tutte le autostrade nel database;
+ * deleteAutostrada  elimina un'autostrada dal database;
+ * addAutostrada aggiunge un autostrada nel database, se gi√† presenti inserisce inoltre automaticamente tutte le tariffe associata a questa autostrada;
+ * addTariffaManually  aggiunge una determinata tariffa nel database associandola ad una autostrada;
+ * deleteTariffa  rimuove una tariffa di una classe veicolo associata ad un'autostrada nel database;
+ * updateNome  modifica il nome dell'autostrada.
  */
 public interface AutostradaDAO {
 

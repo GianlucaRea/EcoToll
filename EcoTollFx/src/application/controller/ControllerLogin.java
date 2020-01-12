@@ -21,8 +21,8 @@ public class ControllerLogin {
 	/**7
 	 * Metodo che restituisce l'Amministratore dal Database
 	 * @param nome dell'Amministratore 
-	 * @param password dell'AmministratoreS
-	 * @return 
+	 * @param password dell'Amministratore
+	 * @return I dati dell'amministratore 
 	 */
 	public static Amministratore getAmministratoreGlobal(String nome , String password) {
 		return loginDao.getAmministratore(nome,password);

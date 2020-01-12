@@ -1,8 +1,8 @@
 package application.model;
 
 /**
- * Classe Amministratore: entit‡ che amministra e gestisce le autostrade e tutte le componenti relative ad esse.
- * @author Daniele FossemÚ 
+ * Classe Amministratore: entit√† che amministra e gestisce le autostrade e tutte le componenti relative ad esse.
+ * @author Daniele Fossem√≤
  *
  */
 public class Amministratore {
@@ -34,7 +34,7 @@ public class Amministratore {
 	
 	/**
 	 * Metodo che cambia l'username dell'Amministratore
-	 * @param newName
+	 * @param newName il nuovo nome 
 	 */
 	public void setUsername(String newName) {this.username = newName;}
 	
@@ -46,7 +46,7 @@ public class Amministratore {
 	
 	/**
 	 * Metodo che cambia la password dell'amministratore
-	 * @param newPass
+	 * @param newPass nuova password
 	 */
 	public void setPassword(String newPass) {this.username = newPass;}
 }

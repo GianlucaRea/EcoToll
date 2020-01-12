@@ -4,7 +4,7 @@ import application.model.Amministratore;
 
 /**
  * INTERFACCIA DAO login
- * getAmministratore -> restituisce l'amministratore passato dal database e ne permette il login;
+ * getAmministratore  restituisce l'amministratore passato dal database e ne permette il login;
  *
  */
 

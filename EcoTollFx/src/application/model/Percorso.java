@@ -17,8 +17,8 @@ public class Percorso {
 		 * Metodo che costruisce un Percorso tramite casello di entrata e uscita e veicolo
 		 * @param casello1 Casello di Entrata in Autostrada
 		 * @param casello2 Casello di Uscita dall'Autostrada
-		 * @param Autostrada Autostrada sul quale viene effettuato il percorso
-		 * codice percorso è trattato come un autoIncrement.
+		 * @param autostrada Autostrada sul quale viene effettuato il percorso
+		 * codice percorso Ã¨ trattato come un autoIncrement.
 		 */
 		
 		public Percorso(Casello casello1, Casello casello2, Autostrada autostrada) {
@@ -70,7 +70,7 @@ public class Percorso {
 		
 		/**
 		 * Metodo che cambia il codice del percorso
-		 * @return void
+		 * @param newCod nuovo codice del percorso
 		 * ATTENZIONE: questo metodo deve essere usata solo per DAO e affini
 		 */
 		

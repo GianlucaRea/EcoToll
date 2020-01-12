@@ -24,6 +24,7 @@ public class ControllerVeicolo {
 	/**
 	 * Metodo che prende un veicolo in base alla targa dal Database
 	 * @param t targa del veicolo
+	 * @return Veicolo Veicolo restituito dal Database
 	 */
 	public static Veicolo getVeicoloGlobal(String t) {
 		return veicolodao.getVeicolo(t);
@@ -47,6 +48,7 @@ public class ControllerVeicolo {
 	 
 	 /**
 	  * Metodo che restituisce la lista di tutti i veicoli presenti nel Database
+	  * @return List La lista di tutti i veicoli presenti nel Database
 	  * 
 	  */
 	 public List<Veicolo> getAllVeicoloGlobal(){

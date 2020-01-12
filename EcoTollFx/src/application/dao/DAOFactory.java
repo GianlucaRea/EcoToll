@@ -16,7 +16,7 @@ public abstract class DAOFactory {
    /**
     * Metodo Factory
     * 
-    * @param  il database da scegliere
+    * @param database il database da scegliere
     * @return la factory corrispondente
     */
    public static DAOFactory getDAOFactory(int database) {

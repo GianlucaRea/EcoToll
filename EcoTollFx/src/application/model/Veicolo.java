@@ -20,7 +20,7 @@ public class Veicolo implements InterfacciaVeicolo {
 	
 
    /**
-    * Questo è il costruttore che utilizziamo per creare il veicolo senza tener conto della classe euro.
+    * Questo Ã¨ il costruttore che utilizziamo per creare il veicolo senza tener conto della classe euro.
     * 
     * @param modello del veicolo
     * @param targa del veicolo
@@ -40,7 +40,7 @@ public class Veicolo implements InterfacciaVeicolo {
 	}
 	
 	/**
-	 * Questo è il costruttore che utilizziamo per creare il veicolo tenendo conto della classe euro.
+	 * Questo Ã¨ il costruttore che utilizziamo per creare il veicolo tenendo conto della classe euro.
 	 * 
 	 * @param modello del veicolo
 	 * @param targa del veicolo
