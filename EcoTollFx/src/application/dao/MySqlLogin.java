@@ -14,47 +14,50 @@ import application.model.Amministratore;
 
 public class MySqlLogin implements LoginDAO{
 	
-	private static final String Login = "select username, password from amministratore where username = ? and password = ?";
+	private static final String Login = "select * from ecotolldatabase.amministratore where username = ? and password = ?";
 	
 
-	public Amministratore getAmministratore(String username, String password) {
+	public boolean getAmministratore(String username, String password) {
 		
 		Amministratore admin = new Amministratore();
-		
+		boolean bool = false;	
         Connection conn = null;
         PreparedStatement pst = null;
         ResultSet rst = null;
         
-        conn = MySQLDAOFactory.createConnection();
+        
         
         try {
-            pst = conn.prepareStatement(Login);
+        	conn = MySQLDAOFactory.createConnection();
+        	pst = conn.prepareStatement(Login);
             pst.setString(1, username);
             pst.setString(2, password);
-            pst.execute();
-            rst = pst.getResultSet();
- 
+            rst=pst.executeQuery();
+
             while (rst.next()){
             	admin.setUsername(rst.getString("username"));
 				admin.setPassword(rst.getString("password"));
+				bool = true;
 			}
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } finally {
-        	if (rst != null) { 
-				try { rst.close(); } 
-			 	catch (SQLException ignore) {}
-			 }
-			 if (pst != null) {
-				try { pst.close(); } 
-			 	catch (SQLException ignore) {}
-			 }
-			 if (conn != null) {
-				try { conn.close(); } 
-			 	catch (SQLException ignore) {}
-			 } 
-        }
- 
-        return admin;
+        	} catch (SQLException e) {
+                e.printStackTrace();
+            } finally {
+                 if (rst != null) { 
+    		try { rst.close(); } 
+    		catch (SQLException ignore) {}
+                 }
+                try {
+                    pst.close();
+                } catch (Exception sse) {
+                    sse.printStackTrace();
+                }
+                try {
+                    conn.close();
+                } catch (Exception cse) {
+                    cse.printStackTrace();
+                }
+            }
+        System.out.println();
+        return bool;
 	}
 }

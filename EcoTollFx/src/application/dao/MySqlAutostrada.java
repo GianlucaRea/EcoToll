@@ -18,9 +18,10 @@ public class MySqlAutostrada implements AutostradaDAO{
 	private static final String selectAllAutostrada = "select nome from ecotolldatabase.autostrada order by nome";
 	private static final String deleteAutostrada = "delete from ecotolldatabase.autostrada where nome=?";
 	private static final String addAutostrada ="insert into ecotolldatabase.autostrada value (?)";
-	private static final String addTariffa ="inser into ecotolldatabase.tariffa(?,?,?)";
-	private static final String deleteTariffa ="delete from ecotolldatabase.tariffa where nome=? and classeVeicolo=?";
+	private static final String addTariffa ="insert into ecotolldatabase.tariffa(?,?,?)";
+	private static final String deleteTariffa ="delete from ecotolldatabase.tariffa where nomeAutostrada=? and classeVeicolo=?";
 	private static final String updateNome ="update ecotolldatabase.autostrada set nome =? where nome=?";
+	private static final String getTariffa="select valore from ecotolldatabase.tariffa where nomeAutostrada=? and classeVeicolo=?";
 	
 	public List<Autostrada> getListOfAutostrada() {
 		
@@ -94,12 +95,6 @@ public class MySqlAutostrada implements AutostradaDAO{
 			pst = conn.prepareStatement(addAutostrada);
 			pst.setString(1, toAdd.getNome());	
 			int i = pst.executeUpdate();
-			int sizeTariffe = toAdd.sizeTariffa();
-			if(sizeTariffe>0) {
-				for(int j = 1; j <= sizeTariffe; j++) {
-					addTariffaManually(toAdd, j, toAdd.getTariffa(j));
-				}
-			}
 			if (i==1) {return true;}
 			else return false;
 		} catch (SQLException e) {
@@ -117,7 +112,7 @@ public class MySqlAutostrada implements AutostradaDAO{
 		}
 	}
 	
-	public boolean addTariffaManually(Autostrada toAdd, int classe, double value) {
+	public boolean addTariffa(Autostrada toAdd, int classe, double value) {
 		
 		Connection conn=null;
 		PreparedStatement pst=null;
@@ -202,5 +197,43 @@ public boolean deleteTariffa(Autostrada toDelete, int classe) {
         }
         return false;
 	}
+	
+
+	
+public double getTariffa(Autostrada x, int classeVeicolo) {
+		
+		double valoreTariffa = 0;
+		
+		Connection conn=null;
+		PreparedStatement pst=null;
+		ResultSet rst=null;		
+		try {
+			conn = MySQLDAOFactory.createConnection();
+			pst=conn.prepareStatement(getTariffa);
+			pst.setString(1, x.getNome());
+			pst.setInt(2, classeVeicolo);
+			rst=pst.executeQuery();
+			while(rst.next()) {valoreTariffa = rst.getDouble("valore");}
+		} catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+             if (rst != null) { 
+		try { rst.close(); } 
+		catch (SQLException ignore) {}
+             }
+            try {
+                pst.close();
+            } catch (Exception sse) {
+                sse.printStackTrace();
+            }
+            try {
+                conn.close();
+            } catch (Exception cse) {
+                cse.printStackTrace();
+            }
+        }
+		return valoreTariffa;
+	}
+
 }
 	

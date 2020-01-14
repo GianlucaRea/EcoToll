@@ -32,8 +32,7 @@ public class ControllerCasello {
  	
 	/**
 	 * Metodo per l'eliminazione di un Casello dal Database
-	 * @param casello da eliminare dal Database
-	 * @param autostrada dove si trova il casello
+	 * @param Casello da eliminare dal Database
 	 * @return eliminazione del Casello
 	 */
 	
@@ -45,13 +44,18 @@ public class ControllerCasello {
 	
 	/**
 	 * Metodo che utilizziamo per aggiungere caselli al Database
-	 * @param casello Il Casello da aggiungere 
-	 * @param autostrada L'Autostrada dove andrà aggiunto il casello
-	 * @return true se l'inserimento del casello è andato a buon fine false altrimenti
+	 * @param nome_casello
+	 * @param altezza_casello
+	 * @param id_autostrada
+	 * @return
 	 */
 	public boolean addCasello(Casello casello, Autostrada autostrada) {
 		if(casellodao.addCasello(casello, autostrada)) return true;
 		else return false;
-}
+	}
 	
+	public void updateCasello (Casello c, String s, double d) {
+		casellodao.updateCasello(c, s, d);
+	}
+
 }

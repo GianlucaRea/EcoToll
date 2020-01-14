@@ -18,7 +18,7 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 
-public class CaselloPageController {
+public class CaselloPageController  implements javafx.fxml.Initializable {
 
 	@FXML // ResourceBundle that was given to the FXMLLoader
 	private ResourceBundle resources;
@@ -55,19 +55,10 @@ public class CaselloPageController {
 
 	@FXML // fx:id="btnUpdate"
 	private Button btnUpdate; // Value injected by FXMLLoader
-
+	
 	@FXML
 	private ChoiceBox<String> selectAutostrataDelete;
 	
-	@FXML
-	private ChoiceBox<String> selectAutostradaDelete;
-	
-	@FXML
-	private ChoiceBox<String> selectAutostradaChange;
-	
-	@FXML // fx:id="selectAutostradaUpdate"
-	private ChoiceBox<String> selectAutostradaUpdate; // Value injected by FXMLLoader
-
 	@FXML
 	void InsertnewKilometroInsert(MouseEvent event) {
 
@@ -94,12 +85,9 @@ public class CaselloPageController {
 		int iNdx = selectAutostrataInsert.getSelectionModel().getSelectedIndex();
 		String autostradaStr = selectAutostrataInsert.getItems().get(iNdx);
 
-
 		Autostrada a = new Autostrada(autostradaStr);
 
-
 		GlobalData.get().getControllerCasello().addCasello(c, a);
-//		GlobalData.get().caselli.add(c);
 	}
 
 	@FXML
@@ -116,7 +104,7 @@ public class CaselloPageController {
 		for (Casello c : GlobalData.get().getControllerCasello().getAllCas()) {
 			if (caselloDel.equals(c.getNome())) {
 				GlobalData.get().getControllerCasello().delete(c, a);
-//				GlobalData.get().caselli.remove(c);
+
 			}
 		}
 	}
@@ -124,57 +112,69 @@ public class CaselloPageController {
 	@FXML
 	void onBtnUpdate (ActionEvent event) {
 		
+//		String caselloMod = editCaselloInsert.getText();
+//		String kilometroMod = editKmInsert.getText();
+//		double kmMod = Double.valueOf(kilometroMod);
+//		Casello casello = new Casello(caselloMod, kmMod);
+//		
+//		
+//		int iNdx = selectCaselloUpdate.getSelectionModel().getSelectedIndex();  //rimozione
+//		String caselloDel= selectCaselloUpdate.getItems().get(iNdx);
+//
+//		int iNdx2 = selectAutostradaChange.getSelectionModel().getSelectedIndex();
+//		String autostradaCas = selectAutostradaChange.getItems().get(iNdx2);
+//
+//		Autostrada a = new Autostrada(autostradaCas);
+//
+//		for (Casello Cas : GlobalData.get().getControllerCasello().getAllCas()) {
+//			if (caselloDel.equals(Cas.getNome())) {
+//				GlobalData.get().getControllerCasello().delete(Cas, a);	
+//			}
 		String caselloMod = editCaselloInsert.getText();
 		String kilometroMod = editKmInsert.getText();
 		double kmMod = Double.valueOf(kilometroMod);
-		Casello casello = new Casello(caselloMod, kmMod);
 		
-		
-		int iNdx = selectCaselloUpdate.getSelectionModel().getSelectedIndex();  //rimozione
-		String caselloDel= selectCaselloUpdate.getItems().get(iNdx);
-
-		int iNdx2 = selectAutostradaChange.getSelectionModel().getSelectedIndex();
-		String autostradaCas = selectAutostradaChange.getItems().get(iNdx2);
-
-		Autostrada a = new Autostrada(autostradaCas);
-
-		for (Casello Cas : GlobalData.get().getControllerCasello().getAllCas()) {
-			if (caselloDel.equals(Cas.getNome())) {
-				GlobalData.get().getControllerCasello().delete(Cas, a);
-//				GlobalData.get().caselli.remove(Cas);
+		for (Casello c : GlobalData.get().getControllerCasello().getAllCas()) {
+			if (selectCaselloUpdate.equals(c.getNome())) {
+				GlobalData.get().getControllerCasello().updateCasello(c, caselloMod, kmMod);
 			}
+		}
+		
+		
 		}
 		
 		
 		
 		
 		
-		int iNdx3 = selectAutostradaUpdate.getSelectionModel().getSelectedIndex(); //Inserimento
-		String autostradaStr = selectAutostradaUpdate.getItems().get(iNdx3);
+//		int iNdx3 = selectAutostradaUpdate.getSelectionModel().getSelectedIndex(); //Inserimento
+//		String autostradaStr = selectAutostradaUpdate.getItems().get(iNdx3);
+//		
+//		Autostrada Aut = new Autostrada(autostradaStr);
+//		
+//		GlobalData.get().getControllerCasello().addCasello(casello, Aut);
+//
+//
+//
+//	}
+
+
+
+
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
 		
-		Autostrada Aut = new Autostrada(autostradaStr);
-		
-		GlobalData.get().getControllerCasello().addCasello(casello, Aut);
-
-
-
-	}
-
-
-
-	@FXML // This method is called by the FXMLLoader when initialization is complete
-	void initialize() {
-		assert editCaselloInsert != null : "fx:id=\"editCaselloInsert\" was not injected: check your FXML file 'CaselloPage.fxml'.";
-		assert editKmInsert != null : "fx:id=\"editKmInsert\" was not injected: check your FXML file 'CaselloPage.fxml'.";
-		assert selectAutostrataInsert != null : "fx:id=\"selectAutostrataInsert\" was not injected: check your FXML file 'CaselloPage.fxml'.";
-		assert btnInsert != null : "fx:id=\"btnInsert\" was not injected: check your FXML file 'CaselloPage.fxml'.";
-		assert selectCaselloDelete != null : "fx:id=\"selectCaselloDelete\" was not injected: check your FXML file 'CaselloPage.fxml'.";
-		assert btnDelete != null : "fx:id=\"btnDelete\" was not injected: check your FXML file 'CaselloPage.fxml'.";
-		assert editCaselloUpdate != null : "fx:id=\"editCaselloUpdate\" was not injected: check your FXML file 'CaselloPage.fxml'.";
-		assert selectCaselloUpdate != null : "fx:id=\"selectCaselloUpdate\" was not injected: check your FXML file 'CaselloPage.fxml'.";
-		assert editKmUpdate != null : "fx:id=\"editKmUpdate\" was not injected: check your FXML file 'CaselloPage.fxml'.";
-		assert selectAutostradaUpdate != null : "fx:id=\"selectAutostradaUpdate\" was not injected: check your FXML file 'CaselloPage.fxml'.";
-		assert btnUpdate != null : "fx:id=\"btnUpdate\" was not injected: check your FXML file 'CaselloPage.fxml'.";
+		assert editCaselloInsert != null : "fx:id=\"newToolboothNameInsert\" was not injected: check your FXML file 'CaselloPage.fxml'.";
+        assert editKmInsert != null : "fx:id=\"newKilometroInsert\" was not injected: check your FXML file 'CaselloPage.fxml'.";
+        assert selectAutostrataInsert != null : "fx:id=\"selectMotorwayofInsert\" was not injected: check your FXML file 'CaselloPage.fxml'.";
+        assert btnInsert != null : "fx:id=\"InsertButtonToolbooth\" was not injected: check your FXML file 'CaselloPage.fxml'.";
+        assert selectCaselloDelete != null : "fx:id=\"selectCaselloDelete\" was not injected: check your FXML file 'CaselloPage.fxml'.";
+        assert btnDelete != null : "fx:id=\"btnDelete\" was not injected: check your FXML file 'CaselloPage.fxml'.";
+        assert selectAutostrataDelete != null : "fx:id=\"selectAutostrataDelete\" was not injected: check your FXML file 'CaselloPage.fxml'.";
+        assert editCaselloUpdate != null : "fx:id=\"editCaselloUpdate\" was not injected: check your FXML file 'CaselloPage.fxml'.";
+        assert selectCaselloUpdate != null : "fx:id=\"selectCaselloUpdate\" was not injected: check your FXML file 'CaselloPage.fxml'.";
+        assert editKmUpdate != null : "fx:id=\"editKmUpdate\" was not injected: check your FXML file 'CaselloPage.fxml'.";
+        assert btnUpdate != null : "fx:id=\"btnUpdate\" was not injected: check your FXML file 'CaselloPage.fxml'.";
 
 		for (Autostrada autostrada : GlobalData.get().getControllerAutostrada().getAllAutostade()) {
 			selectAutostrataInsert.getItems().add(autostrada.getNome());
@@ -187,16 +187,9 @@ public class CaselloPageController {
 		for (Casello c: GlobalData.get().getControllerCasello().getAllCas()) {
 			selectCaselloDelete.getItems().add(c.getNome());
 		}
-		for (Autostrada a: GlobalData.get().getControllerAutostrada().getAllAutostade()) {
-			selectAutostradaChange.getItems().add(a.getNome());
-		}
+
 		for (Casello c: GlobalData.get().getControllerCasello().getAllCas()) {
 			selectCaselloUpdate.getItems().add(c.getNome());
-		}
-
-
-
-
+		}	
 	}
-
 }

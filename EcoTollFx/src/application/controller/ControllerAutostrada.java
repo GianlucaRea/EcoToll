@@ -45,5 +45,22 @@ public class ControllerAutostrada {
 	public void deleteAutostradaGlobal(Autostrada A) {
 		autostradaDao.deleteAutostrada(A);
 	}
+	
+	public void changeAutostradaGlobal(Autostrada a, String s) {
+		autostradaDao.updateNome(a, s);
+	}
+
+	public void updateNome(Autostrada a, String autostrada) {
+		autostradaDao.updateNome(a, autostrada);
+		
+	}
+	
+	public static double getTariffa(Autostrada a, int classeVeicolo) {
+		return autostradaDao.getTariffa(a, classeVeicolo);
+	}
+	
+	public void addTariffa (Autostrada a, int classeVeicolo, double tariffa) {
+		autostradaDao.addTariffa(a, classeVeicolo, tariffa);
+	}
 }
 

@@ -17,8 +17,8 @@ public class ControllerPercorso {
 	
 	/**
 	 * Metodo che restituisce un Percorso in base al suo codice dal Database; 
-	 * @param p codice percorso nel database 
-	 * @return Percorso restituisce il persorso presente nel database
+	 * @param p
+	 * @return Il Percorso 
 	 */
 	public Percorso getIlPercorso(String p){
 		return percorsodao.getPercorso(p);

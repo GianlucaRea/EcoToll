@@ -38,7 +38,7 @@ public class MySqlVeicolo implements VeicoloDAO{
 				veicolo.setModello(rst.getString("modello"));
 				veicolo.setMarca(rst.getString("marca"));
 				veicolo.setPeso(rst.getInt("peso"));
-				veicolo.setNumeroAssi(rst.getInt("n_assi"));
+				veicolo.setNumeroAssi(rst.getInt("n°assi"));
 				veicolo.setClasseEuro(rst.getInt("classeEuro"));
 				veicolo.setAnno(rst.getInt("anno"));
 				veicolo.setAltezza(rst.getDouble("altezza"));

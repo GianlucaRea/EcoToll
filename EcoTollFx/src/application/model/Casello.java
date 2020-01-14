@@ -1,7 +1,7 @@
 package application.model;
 
 /**
- * Questa Ã¨ la classe che definisce il Casello , tramite il nome e l'altezza in KM 
+ * Questa è la classe che definisce il Casello , tramite il nome e l'altezza in KM 
  * 
  * @author gianlucarea
  *
@@ -49,7 +49,7 @@ public class Casello {
 		}
         
 		/**
-		 * Metodo che restituisce il kilometro a cui Ã¨ situato il Casello
+		 * Metodo che restituisce il kilometro a cui è situato il Casello
 		 * @return kilometro del Casello
 		 */
 		public double getKilometro() {
@@ -57,8 +57,8 @@ public class Casello {
 		}
 		
 		/**
-		 * Metodo che cambia il kilometro a cui Ã¨ situato il Casello 
-		 * @param kilometro nuovo kilometro a cui Ã¨ situato il Casello
+		 * Metodo che cambia il kilometro a cui è situato il Casello 
+		 * @param kilometro nuovo kilometro a cui è situato il Casello
 		 */
 		public void setKilometro(double kilometro) {
 			this.kilometro = kilometro;

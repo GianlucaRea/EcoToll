@@ -9,7 +9,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #607ce0;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml" fx:controller="application.front.fxml.AutostradaPageController">
+<AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #607ce0;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.front.controller.AutostradaPageController">
    <children>
       <Text layoutX="14.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Impostazioni Autostrada">
          <font>
@@ -18,26 +18,53 @@
       </Text>
       <SplitPane dividerPositions="0.3020257826887661" layoutY="55.0" orientation="VERTICAL" prefHeight="545.0" prefWidth="800.0">
         <items>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="155.0" prefWidth="798.0" style="-fx-background-color: #97ea8e;">
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="155.0" prefWidth="796.0" style="-fx-background-color: #97ea8e;">
                <children>
-                  <Text layoutX="327.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Inserimento" wrappingWidth="144.13671875">
+                  <SplitPane dividerPositions="0.9866666666666667" layoutY="1.0" prefHeight="160.0" prefWidth="227.0">
+                    <items>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" style="-fx-background-color: #97ea8e;">
+                           <children>
+                              <TextField fx:id="editAutostradaInsert" layoutX="38.0" layoutY="79.0" promptText="Es A24" />
+                              <Text layoutX="57.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome Autostrada">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Text>
+                              <Text layoutX="46.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Inserimento" wrappingWidth="144.13671875">
+                                 <font>
+                                    <Font name="System Bold Italic" size="24.0" />
+                                 </font>
+                              </Text>
+                              <Button fx:id="btnInsert" layoutX="77.0" layoutY="122.0" mnemonicParsing="false" onAction="#onBtninsert" text="Inserisci" />
+                           </children>
+                        </AnchorPane>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" />
+                    </items>
+                  </SplitPane>
+                  <TextField fx:id="editTariffa" layoutX="635.0" layoutY="81.0" />
+                  <Text layoutX="683.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tariffa">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="430.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Aggiungi Tariffa" wrappingWidth="207.13671875">
                      <font>
                         <Font name="System Bold Italic" size="24.0" />
                      </font>
                   </Text>
-                  <TextField layoutX="92.0" layoutY="77.0" promptText="Es A24" />
-                  <TextField layoutX="580.0" layoutY="77.0" />
-                  <Text layoutX="633.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tariffa">
+                  <Button fx:id="btnUpdateTariffa" layoutX="476.0" layoutY="124.0" mnemonicParsing="false" onAction="#onBtnUpdateTariffa" text="aggiornaTariffa" />
+                  <TextField fx:id="EditClasse" layoutX="448.0" layoutY="81.0" />
+                  <TextField fx:id="EditAutostradaTariffa" layoutX="250.0" layoutY="81.0" />
+                  <Text layoutX="482.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Classe Veicolo">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
                   </Text>
-                  <Text layoutX="108.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome Autostrada">
+                  <Text layoutX="295.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Autostrada">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
                   </Text>
-                  <Button layoutX="370.0" layoutY="102.0" mnemonicParsing="false" text="Inserisci" />
                </children>
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="211.0" prefWidth="647.0">
@@ -56,22 +83,12 @@
                                     <Font name="System Bold" size="14.0" />
                                  </font>
                               </Text>
-                              <ChoiceBox layoutX="88.0" layoutY="73.0" prefWidth="150.0" />
-                              <Button layoutX="606.0" layoutY="73.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="73.0" text="Elimina" />
+                              <ChoiceBox fx:id="cbxAutostradaDelete" layoutX="88.0" layoutY="73.0" prefWidth="150.0" />
+                              <Button fx:id="btnDelete" layoutX="606.0" layoutY="73.0" mnemonicParsing="false" onAction="#onBtnElimina" prefHeight="25.0" prefWidth="73.0" text="Elimina" />
                            </children></AnchorPane>
                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="181.0" prefWidth="798.0" style="-fx-background-color: #97ea8e;">
                            <children>
-                              <Pane layoutY="-1.0" prefHeight="228.0" prefWidth="266.0" style="-fx-background-color: #97ea8e;">
-                                 <children>
-                                    <TextField layoutX="59.0" layoutY="136.0" />
-                                    <Text layoutX="89.0" layoutY="129.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nuovo Nome">
-                                       <font>
-                                          <Font name="System Bold" size="14.0" />
-                                       </font>
-                                    </Text>
-                                    <Button layoutX="87.0" layoutY="171.0" mnemonicParsing="false" text="Cambia Nome" />
-                                 </children>
-                              </Pane>
+                              <Pane layoutY="-1.0" prefHeight="228.0" prefWidth="266.0" style="-fx-background-color: #97ea8e;" />
                               <Pane layoutX="266.0" prefHeight="228.0" prefWidth="266.0" style="-fx-background-color: #97ea8e;">
                                  <children>
                                     <Text layoutX="77.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Modifica" wrappingWidth="112.2333984375">
@@ -84,20 +101,17 @@
                                           <Font name="System Bold" size="14.0" />
                                        </font>
                                     </Text>
-                                    <ChoiceBox layoutX="57.0" layoutY="73.0" prefWidth="150.0" />
-                                 </children>
-                              </Pane>
-                              <Pane layoutX="532.0" prefHeight="228.0" prefWidth="266.0" style="-fx-background-color: #97ea8e;">
-                                 <children>
-                                    <Text layoutX="80.0" layoutY="130.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nuova Tariffa" wrappingWidth="95.087890625">
+                                    <ChoiceBox fx:id="cbxAutostradaUpdate" layoutX="57.0" layoutY="73.0" prefWidth="150.0" />
+                                    <TextField fx:id="editNewAutostradaUpdate" layoutX="58.0" layoutY="140.0" />
+                                    <Text layoutX="85.0" layoutY="129.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nuovo Nome">
                                        <font>
                                           <Font name="System Bold" size="14.0" />
                                        </font>
                                     </Text>
-                                    <TextField layoutX="53.0" layoutY="134.0" />
-                                    <Button layoutX="68.0" layoutY="167.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="118.0" text="Cambia Kilometro" />
+                                    <Button fx:id="btnNewAutostradaNameUpdate" layoutX="82.0" layoutY="174.0" mnemonicParsing="false" onAction="#onBtnUpdate" text="Cambia Nome" />
                                  </children>
                               </Pane>
+                              <Pane layoutX="532.0" prefHeight="228.0" prefWidth="266.0" style="-fx-background-color: #97ea8e;" />
                            </children>
                         </AnchorPane>
                     </items>
@@ -106,6 +120,5 @@
             </AnchorPane>
         </items>
       </SplitPane>
-      <Button layoutX="734.0" layoutY="18.0" mnemonicParsing="false" text="Indietro" />
    </children>
 </AnchorPane>

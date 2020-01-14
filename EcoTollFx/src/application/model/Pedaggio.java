@@ -1,7 +1,7 @@
 package application.model;
 
 /**
- * La classe pedaggio serve al calcolo del pedaggio, e perciÃ²  
+ * La classe pedaggio serve al calcolo del pedaggio, e perciò  
  * fornisce soltando metodi per il calcolo.
  * @author gianlucarea
  *
@@ -11,13 +11,13 @@ package application.model;
 	public abstract class Pedaggio {
 			
 		/**
-		 * Metodo per il calcolo del Pedaggio in cui Ã¨ specificata l'iva in caso di cambio di essa per questo specifico calcolo
+		 * Metodo per il calcolo del Pedaggio in cui è specificata l'iva in caso di cambio di essa per questo specifico calcolo
 		 * @param v Veicolo che Effettua il tragitto
 		 * @param iva Iva Da Pagare per il tragitto
 		 * @param percorso Traggito che effettua il Veicolo
 		 * @return Il risultato del calcolo del pedaggio con iva
 		 */
-			//Metodo per eventuale futuro nel quale puÃ² essere specificata l'iva in caso di cambio per questo specifico calcolo
+			//Metodo per eventuale futuro nel quale può essere specificata l'iva in caso di cambio per questo specifico calcolo
 			public static double calcolaPedaggio(Veicolo v, int iva, Percorso percorso ) {				
 				double risultato = 0;
 				
@@ -30,8 +30,8 @@ package application.model;
 			/**
 			 * Metodo per il calcolo del Pedaggio con IVA attuale per questo specifico calcolo
 			 * @param v Veicolo che percorre il tragitto
-			 * @param percorso traggiot che effettua il veicolo
-			 * @return double Il risultato del calcolo del pedaggio con iva attuale
+			 * @param percorsos traggiot che effettua il veicolo
+			 * @return Il risultato del calcolo del pedaggio con iva attuale
 			 */
 			public static double calcolaPedaggio(Veicolo v, Percorso percorso) {
 				

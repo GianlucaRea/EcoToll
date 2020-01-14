@@ -10,12 +10,16 @@ import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
 
 public class HomeController implements javafx.fxml.Initializable{
 
@@ -45,24 +49,29 @@ public class HomeController implements javafx.fxml.Initializable{
 
 	@FXML
 	protected ChoiceBox<String> showMotorwayPay;
+	
+	 @FXML
+	    private TextField IVA;
 
 	@FXML
-	void doCalculus(MouseEvent event) {
+	void doCalculus(MouseEvent event) {		
 		String targa = licensePlate.getText();
 		Veicolo veicoloTargato = null;
-		Autostrada autostradaG = null;	//made by cronietto
-
-//		for (Veicolo veicolo : GlobalData.get().getControllerVeicolo().getAllVeicoloGlobal()) {
-//			if (veicolo.getTarga().contentEquals(targa)) {
-//				veicoloTargato = veicolo;
-//			}
-//		}
+		String iva;
+		iva = IVA.getText();
 		
+		if (IVA.getText().equals("")) {
+			Alert alert1 = new Alert(Alert.AlertType.INFORMATION);
+			alert1.setTitle("EcoToll");
+			alert1.setHeaderText("IVA non trovata");
+			alert1.showAndWait();
+			return;
+		}
 
+		double IVA1 = Double.parseDouble(iva);
+		IVA1 = IVA1 / 100;
 		
 		veicoloTargato = GlobalData.get().getControllerVeicolo().getVeicoloGlobal(targa);
-		
-		
 
 		if (veicoloTargato == null) {
 			Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -73,18 +82,16 @@ public class HomeController implements javafx.fxml.Initializable{
 			return;
 		}
 		
-		int classeVeicolo = veicoloTargato.getClasseEuro();
+		int classeVeicolo = veicoloTargato.getClassificazione();
 
-		// Dati dalla combobox
 		int iNdx = showEntryTollbooth.getSelectionModel().getSelectedIndex();
 		String daCasello = showEntryTollbooth.getItems().get(iNdx);
-		double daKm = 0;
+		double daKm = 0.0;
 
-		// Dati dalla combobox
 		iNdx = showExitToolbooth.getSelectionModel().getSelectedIndex();
 		String aCasello = showExitToolbooth.getItems().get(iNdx);
+		double aKm = 0.0;
 		
-		double aKm = 0;
 		double distanza = 0.0;
 
 		for (Casello cas : GlobalData.get().getControllerCasello().getAllCas())  {
@@ -96,39 +103,39 @@ public class HomeController implements javafx.fxml.Initializable{
 				aKm = cas.getKilometro();
 			}
 		}
-
+		
 		distanza = daKm - aKm;
-
 		if (distanza < 0.0)
 			distanza = -distanza;
 
 		iNdx = showMotorwayPay.getSelectionModel().getSelectedIndex();
 		String autostrada = showMotorwayPay.getItems().get(iNdx);
+		Autostrada a = new Autostrada(autostrada);
 		
+		double tariffa = GlobalData.get().getControllerAutostrada().getTariffa(a, classeVeicolo);
+		tariffa = tariffa * distanza;
+		
+		double tariffaIVA = tariffa * IVA1;
+		tariffa = tariffa + tariffaIVA;
+		
+		tariffa *= 100;
+		tariffa = java.lang.Math.round(tariffa);
+		double modulo = tariffa % 10;
+		if(modulo <= 5) tariffa -= modulo;
+		else tariffa = tariffa + 10 - modulo;
+		tariffa = tariffa / 100;
+
+		String tariffaS;
+		tariffaS= String.valueOf(tariffa).toString();
 		
 
-		// Devi trovare la tariffa!!!
 		
+		System.out.println(classeVeicolo+ " " + "Targa " + targa + " Autostrada " + autostrada + " Da " + daCasello +  " " + daKm + " a " + aCasello + " " + aKm + " - " + distanza + " " + tariffa);
 		
-//		public void setTariffa(double tariffa, int ClassificazioneVeicolo) {
-//			this.tariffa[ClassificazioneVeicolo - 1] = tariffa;
-//		}
-		
-		
-		
-		
+		result.setText(tariffaS);
 
-		
-//		double classeAutostrada = autostradaG.getTariffa(classeVeicolo);
-//		double tariffa = classeAutostrada * distanza;
-//		
-//		String tariffaS;
-//		tariffaS= String.valueOf(tariffa).toString();
-		
-		System.out.println("Targa " + targa + " Autostrada " + autostrada + " Da " + daCasello +  " " + daKm + " a " + aCasello + " " + aKm + " - " + distanza);
-		
-		result.setText("tariffaS");
 	}
+
 
 	@FXML
 	void enterLicensePlate(MouseEvent event) {
@@ -149,7 +156,27 @@ public class HomeController implements javafx.fxml.Initializable{
 	@FXML
 	void onBtnLogin(ActionEvent event) {
 
-	}
+		String utente = null;
+		String password = null;	
+		utente = usernamefield.getText();
+		password = passwordField.getText();
+		
+		if (GlobalData.get().getControllerLogin().getAmministratoreGlobal(utente, password)) {
+			
+			usernamefield.clear();
+			passwordField.clear();
+			
+			try {
+				FXMLLoader fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource("application/front/fxml/AdminPage.fxml"));
+				Parent root1 = (Parent) fxmlLoader.load();
+				Stage stage = new Stage();
+				stage.setScene(new Scene(root1));
+				stage.show();
+			} catch(Exception e) {
+				e.printStackTrace();
+			}
+		}
+		}
 
 	@FXML
 	void returnResult(ActionEvent event) {
@@ -182,9 +209,6 @@ public class HomeController implements javafx.fxml.Initializable{
 			}
 		});
 
-		//		for(Casello casello : ControllerCasello.getAllCas()) {
-		//			showEntryTollbooth.getItems().add(casello.getNome());
-		//		}
 	}
 
 	protected void onSelChangedShowMotorwayPay(Number newValue) {

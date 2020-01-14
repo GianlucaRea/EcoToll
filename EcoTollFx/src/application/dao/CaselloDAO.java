@@ -8,12 +8,12 @@ import application.model.Casello;
 
 /**
  * INTERFACCIA DAO CASELLO
- * getListOfCasello  restituisce la lista di tutti i caselli nel database;
- * deleteCasello  elimina un casello dal database;
- * addCasello  aggiungi un casello nel database;
- * updateCasello  modifica il nome ed il kilometro del casello
- * updateNome  modifica il nome del casello
- * updateKm  modifica il kilometro del casello
+ * getListOfCasello -> restituisce la lista di tutti i caselli nel database;
+ * deleteCasello -> elimina un casello dal database;
+ * addCasello -> aggiungi un casello nel database;
+ * updateCasello -> modifica il nome ed il kilometro del casello
+ * updateNome -> modifica il nome del casello
+ * updateKm -> modifica il kilometro del casello
  */
 
 public interface CaselloDAO {
