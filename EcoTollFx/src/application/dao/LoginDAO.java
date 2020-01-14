@@ -4,12 +4,12 @@ import application.model.Amministratore;
 
 /**
  * INTERFACCIA DAO login
- * getAmministratore  restituisce l'amministratore passato dal database e ne permette il login;
+ * getAmministratore -> restituisce l'amministratore passato dal database e ne permette il login;
  *
  */
 
 public interface LoginDAO {
 
-	public Amministratore getAmministratore(String username, String password);
+	public boolean getAmministratore(String username, String password);
 
 }

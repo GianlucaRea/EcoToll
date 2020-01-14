@@ -1,8 +1,7 @@
 package application.controller;
 
-import application.dao.LoginDAO;
-import application.model.Amministratore;
 import application.dao.DAOFactory;
+import application.dao.LoginDAO;
  
 
 public class ControllerLogin {
@@ -21,10 +20,10 @@ public class ControllerLogin {
 	/**7
 	 * Metodo che restituisce l'Amministratore dal Database
 	 * @param nome dell'Amministratore 
-	 * @param password dell'Amministratore
-	 * @return I dati dell'amministratore 
+	 * @param password dell'AmministratoreS
+	 * @return 
 	 */
-	public static Amministratore getAmministratoreGlobal(String nome , String password) {
+	public static boolean getAmministratoreGlobal(String nome , String password) {
 		return loginDao.getAmministratore(nome,password);
 	}
 }

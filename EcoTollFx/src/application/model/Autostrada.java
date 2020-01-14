@@ -20,7 +20,7 @@ import java.util.*;
 		 * Metodo che costruisce un Autostrada.
 		 * @param nome dell'Autostrada
 		 * @param tariffa dell'Autostrada
-		 * @param listaCaselli dell'Autostrada
+		 * @param caselli dell'Autostrada
 		 */
 		public Autostrada(String nome, TreeMap<Integer, Double> tariffa, HashSet<Casello> listaCaselli ) {
 			this.tariffa = tariffa;
@@ -67,8 +67,8 @@ import java.util.*;
 		
 		/**
 		 * Metodo che data l'autostrada ne restituisce il Casello
-		 * @param nome il nome dell'Autostrada
-		 * @return Casello che appartendono all'autostrada.
+		 * @param Autostrada
+		 * @return caselli che appartendono all'autostrada.
 		 */
 		public Casello getCasello(String nome) {
 			for(Casello c : listaCaselli) {
@@ -78,9 +78,9 @@ import java.util.*;
 		}
 		
 		/**
-		 * Metodo che dato un un casello controlla se esso √® contenuto nell'autostrada
-		 * @param c Casello che controlla 
-		 * @return boolean che restituisce true se √® presente false altrimenti 
+		 * Metodo che dato un un casello controlla se esso Ë contenuto nell'autostrada
+		 * @param casello
+		 * @return boolean
 		 */
 		public boolean searchCasello(Casello c) {
 			return listaCaselli.contains(c);
@@ -88,8 +88,8 @@ import java.util.*;
 		
 		/**
 		 * Metodo che dato un un casello lo elimina dall'autostrada
-		 * @param c Casello 
-		 * @return boolean che restituisce true se lo elimina false altrimenti 
+		 * @param casello
+		 * @return boolean
 		 */
 		public boolean deleteCasello(Casello c) {
 			return listaCaselli.remove(c);
@@ -97,8 +97,8 @@ import java.util.*;
 		
 		/**
 		 * Metodo che restituisce la tariffa in base alla classificazione del veicolo
-		 * @param classificazioneVeicolo La classe del veicolo
-		 * @return double tariffa della tratta 
+		 * @param ClassificazioneVeicolo La classe del veicolo
+		 * @return tariffa della tratta 
 		 */
 		public double getTariffa(int classificazioneVeicolo) {
 			return tariffa.get(classificazioneVeicolo);
@@ -106,8 +106,8 @@ import java.util.*;
 		
 		/**
 		 * Metodo che inserisce nella treeMap tariffa una nuova tariffa in base alla classe
-		 * @param classe La classe veicolo che verr√† aggiunta alla treeMap
-		 * @param valore il valore che verr√† associato a tale classe
+		 * @param classe La classe veicolo che verr‡ aggiunta alla treeMap
+		 * @param valore il valore che verr‡ associato a tale classe
 		 * @return
 		 */
 		public boolean setTariffa(int classe, double valore) {
@@ -155,5 +155,3 @@ import java.util.*;
 		}
 
 	}
-
-//Prova cambio per Davide git
